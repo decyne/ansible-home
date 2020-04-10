@@ -1,0 +1,19 @@
+---
+- name: Install common programs
+  become: yes
+  action: >
+    {{ ansible_pkg_mgr }} name={{ item }} state=present update_cache=yes
+  with_items:
+  - git
+  - vlc
+  - vim
+  - nmap
+
+- name: Create vimrc
+  become: yes
+  template:
+    src: vimrc
+    dest: "/home/{{ user }}/.vimrc"
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    mode: 0600

@@ -1,0 +1,14 @@
+---
+- name: Create Drive mount point
+  become: yes
+  file:
+    path: "/home/{{ user }}/ Drive"
+    state: directory
+    mode: 0744
+    owner: "{{ user }}"
+    group: "{{ user }}"
+
+- name: Install automount
+  become: yes
+  action: >
+    {{ ansible_pkg_mgr }} name=autofs state=present update_cache=yes

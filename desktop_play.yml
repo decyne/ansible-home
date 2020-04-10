@@ -1,0 +1,18 @@
+---
+- hosts: oriole
+  vars:
+    icons: numix_circle
+  roles: 
+#    - intensive_applications
+     - home_install
+     - common_applications
+     - tmux
+     - steam
+     - discord
+     #- minecraft_server
+     - minecraft_client
+     - spotify
+     - webserver
+#     - xfce
+#     - mounts
+#     - chrome

@@ -1,0 +1,1 @@
+deb {{ spotify_repo }} stable non-free

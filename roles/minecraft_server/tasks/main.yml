@@ -1,0 +1,33 @@
+---
+- name: Download java
+  become: yes
+  action: >
+    {{ ansible_pkg_mgr }} name={{ item }} state=present update_cache=yes
+  with_items:
+    - openjdk-8-jdk
+
+- name: Create Minecraft Server Folder
+  become: yes
+  file:
+    state: directory
+    path: "{{ server_dir }}"
+
+- name: Download Minecraft Server
+  become: yes
+  get_url:
+    url: "https://launcher.mojang.com/v1/objects/bb2b6b1aefcd70dfd1892149ac3a215f6c636b07/server.jar"
+    dest: "{{ server_dir }}"
+
+- name: Create server running file
+  become: yes
+  copy:
+    dest: "{{ server_dir }}"
+    src: run_server.sh
+    mode: 0744
+
+- name: Accept the eula
+  become: yes
+  copy:
+    dest: "{{ server_dir }}"
+    src: eula.txt
+    mode: 0644

@@ -1,0 +1,20 @@
+---
+- name: Add Numix repository
+  become: yes
+  apt_repository:
+    repo: "ppa:numix/ppa"
+  register: numix_repo_added
+
+- name: Update packages
+  become: yes
+  apt:
+    update_cache: yes
+  when: numix_repo_added.changed
+
+- name: Install Numix Circle
+  become: yes
+  apt:
+    present: yes
+    name: "{{ item }}"
+  with_items:
+    - numix-icon-theme-circle

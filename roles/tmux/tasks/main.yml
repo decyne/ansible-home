@@ -1,0 +1,12 @@
+---
+- name: Install Tmux
+  become: yes
+  action: >
+    {{ ansible_pkg_mgr }} name=tmux state=present update_cache=yes
+
+- name: Install Tmux config
+  become: yes
+  template:
+    src: tmux.conf
+    dest: "/home/{{ user }}/.tmux.conf"
+    owner: "{{ user }}"

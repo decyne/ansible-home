@@ -1,0 +1,8 @@
+# Adapted from the wtanaka.chrome playbook
+# https://github.com/wtanaka/ansible-role-chrome
+---
+- include: get_key.yml
+- include: debian.yml
+  when: ansible_os_family in ['Debian', 'Linuxmint','\"elementary\"']
+- include: redhat.yml
+  when: ansible_os_family in ['RedHat']

@@ -1,0 +1,10 @@
+---
+- name: download google key
+  become: yes
+  get_url:
+    url: https://dl.google.com/linux/linux_signing_key.pub
+    dest: /root/google.pub
+    mode: 0644
+    owner: root
+  register: result_download_key
+  until: result_download_key|success
