@@ -1,9 +1,7 @@
 ---
-- hosts: pootoo
+- hosts: potoo
   roles: 
-#    - intensive_applications
      - home_install
      - common_applications
-     - tmux
      - minecraft_server
      - steam

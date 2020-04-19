@@ -1,0 +1,12 @@
+---
+- hosts: kestrel
+  vars:
+    icons: numix_circle
+  roles: 
+     - home_install
+     - common_applications
+     - spotify
+     - firefox
+#     - xfce
+#     - mounts
+#     - chrome
