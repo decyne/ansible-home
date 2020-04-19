@@ -1,0 +1,3 @@
+---
+- name: Set git editor to vim
+  command: git_config --global core.editor "vim"

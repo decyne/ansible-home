@@ -1,10 +1,11 @@
 ---
-- name: Install intensive programs
+- name: Install common programs
   become: yes
   action: >
     {{ ansible_pkg_mgr }} name={{ item }} state=present update_cache=yes
   with_items:
-    - gimp
-    - freecad
-    - inkscape
-    - pinta
+  - git
+  - vlc
+  - vim
+  - tmux
+  - nmap
