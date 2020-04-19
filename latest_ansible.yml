@@ -1,0 +1,4 @@
+---
+- hosts: oriole
+  roles: 
+     - ansible

@@ -15,9 +15,15 @@
     src: spotify.list
     dest: /etc/apt/sources.list.d
 
-- name: 
+- name: Install Spotify
   become: yes
   action: >
     {{ ansible_pkg_mgr }} name={{ item }} state=present update_cache=yes
   with_items:
   - spotify-client
+
+- name: Install Spotify TUI
+  become: yes
+  snap:
+    name: spt
+    state: present

@@ -4,6 +4,7 @@
     icons: numix_circle
   roles: 
 #    - intensive_applications
+     - ansible
      - home_install
      - common_applications
      - firefox
