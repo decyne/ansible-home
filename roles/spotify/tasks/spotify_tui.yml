@@ -1,0 +1,15 @@
+---
+- name: Install Spotify TUI
+  become: yes
+  snap:
+    name: spt
+    state: present
+
+- name: Configure spotify-tui for client
+  become: yes
+  file:
+    src: client.yml
+    dest: "/home/{{ user }}/snap/spt/177/.config/spotify-tui/" 
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    mode: 0664

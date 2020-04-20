@@ -3,27 +3,5 @@
     msg: Only able to install Spotify on Debian based systems
   when: ansible_os_family not in ['Debian', 'Linuxmint','\"elementary\"']
 
-- name: Add Spotify repository gpg key
-  become: yes
-  apt_key:
-    url: "{{ spotify_key }}"
-    state: present
-
-- name: Configure Spotify repository
-  become: yes
-  template:
-    src: spotify.list
-    dest: /etc/apt/sources.list.d
-
-- name: Install Spotify
-  become: yes
-  action: >
-    {{ ansible_pkg_mgr }} name={{ item }} state=present update_cache=yes
-  with_items:
-  - spotify-client
-
-- name: Install Spotify TUI
-  become: yes
-  snap:
-    name: spt
-    state: present
+- include: spotify.yml
+- include: spotify_tui.yml
