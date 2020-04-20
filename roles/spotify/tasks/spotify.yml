@@ -1,0 +1,19 @@
+---
+- name: Add Spotify repository gpg key
+  become: yes
+  apt_key:
+    url: "{{ spotify_key }}"
+    state: present
+
+- name: Configure Spotify repository
+  become: yes
+  template:
+    src: spotify.list
+    dest: /etc/apt/sources.list.d
+
+- name: Install Spotify
+  become: yes
+  action: >
+    {{ ansible_pkg_mgr }} name={{ item }} state=present update_cache=yes
+  with_items:
+  - spotify-client

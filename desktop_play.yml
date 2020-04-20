@@ -2,6 +2,7 @@
 - hosts: oriole
   roles: 
 #    - intensive_applications
+     - ansible
      - home_install
      - common_applications
      - firefox

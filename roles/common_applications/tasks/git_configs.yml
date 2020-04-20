@@ -1,3 +1,14 @@
 ---
-- name: Set git editor to vim
-  command: git_config --global core.editor "vim"
+- name: Set vim as Visual
+  become: yes
+  lineinfile:
+    path: "/home/{{ user }}/.profile"
+    regexp: '^VISUAL='
+    line: 'VISUAL=vim'
+
+- name: Set Vim as default editor
+  become: yes
+  lineinfile:
+    path: "/home/{{ user }}/.profile"
+    regexp: '^EDITOR='
+    line: 'EDITOR=$VISUAL'
