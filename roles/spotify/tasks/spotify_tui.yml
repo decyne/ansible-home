@@ -7,7 +7,7 @@
 
 - name: Configure spotify-tui for client
   become: yes
-  file:
+  copy:
     src: client.yml
     dest: "/home/{{ user }}/snap/spt/177/.config/spotify-tui/" 
     owner: "{{ user }}"

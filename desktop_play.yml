@@ -10,7 +10,7 @@
      - discord
      #- minecraft_server
      - minecraft_client
-     - { role: spotify, when: ansible_os_family in ['Debian', 'Linuxmint','\"elementary\"'] }
+     - { role: spotify, when: "ansible_os_family in ['Debian', 'Linuxmint','\"elementary\"']" }
      - webserver
 #    - { role: xfce, icons: "numix_circle" }
 #     - mounts

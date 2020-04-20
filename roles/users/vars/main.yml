@@ -1,3 +1,0 @@
----
-priv_user: "{{ user }}.p"
-priv_sudoers: "{{ user }}_p"
