@@ -1,7 +1,5 @@
 ---
 - hosts: oriole
-  vars:
-    icons: numix_circle
   roles: 
 #    - intensive_applications
      - home_install
@@ -11,8 +9,8 @@
      - discord
      #- minecraft_server
      - minecraft_client
-     - spotify
+     - { role: spotify, when: ansible_os_family in ['Debian', 'Linuxmint','\"elementary\"'] }
      - webserver
-#     - xfce
+#    - { role: xfce, icons: "numix_circle" }
 #     - mounts
 #     - chrome

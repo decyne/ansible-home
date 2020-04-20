@@ -1,12 +1,10 @@
 ---
 - hosts: kestrel
-  vars:
-    icons: numix_circle
   roles: 
      - home_install
      - common_applications
-     - spotify
      - firefox
-#     - xfce
+     - { role: spotify, when: "ansible_os_family in ['Debian', 'Linuxmint','\"elementary\"']" }
+#    - { role: xfce, icons: "numix_circle" }
 #     - mounts
 #     - chrome

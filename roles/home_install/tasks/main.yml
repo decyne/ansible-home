@@ -1,2 +1,5 @@
 ---
-- import_tasks: users.yml
+- include: users.yml
+- include: timezone.yml
+- include: hostname.yml
+- include: hosts.yml
