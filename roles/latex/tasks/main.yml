@@ -1,3 +1,4 @@
 ---
 - include: install.yml
 - include: dnd_template.yml
+- include: dnd_git.yml

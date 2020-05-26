@@ -1,0 +1,10 @@
+---
+- name: Create directory for DnD LaTex files
+  file:
+    path: "{{ user }}/DnD_Latex"
+    state: directory
+  
+- name: Download my DnD LaTeX files from my git repo
+  git:
+    repo: 'https://github.com/decyne/dnd_latex.git'
+    dest: "/home/{{ user }}/DnD_Latex"
