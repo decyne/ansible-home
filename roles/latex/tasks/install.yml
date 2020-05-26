@@ -1,12 +1,7 @@
 ---
-- name: Install common programs
+- name: Install LaTeX
   become: yes
   action: >
     {{ ansible_pkg_mgr }} name={{ item }} state=present update_cache=yes
   with_items:
-  - git
-  - vlc
-  - vim
-  - tmux
-  - nmap
-  - jpegoptim
+  - texlive-full

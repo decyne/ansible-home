@@ -1,7 +1,7 @@
 ---
 - hosts: oriole
   roles: 
-#    - intensive_applications
+    - intensive_applications
      - ansible
      - home_install
      - common_applications
@@ -12,6 +12,8 @@
      - minecraft_client
      - { role: spotify, when: "ansible_os_family in ['Debian', 'Linuxmint','\"elementary\"']" }
      - webserver
-#    - { role: xfce, icons: "numix_circle" }
-#     - mounts
-#     - chrome
+#     - { role: i3, background: "mountains.jpg" }
+#     - { role: xfce, icons: "numix_circle" }
+     - mounts
+     - chrome
+     - latex

@@ -42,8 +42,8 @@
 
 #db-[99:101]-node.example.com
 
-oriole  ansible_host=192.168.1.104
-#potoo   ansible_host=192.168.1.118
+oriole  ansible_host=192.168.1.109
+potoo   ansible_host=192.168.1.100
 kestrel ansible_host=192.168.1.113
 
 [all:vars]
