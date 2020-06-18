@@ -1,4 +1,9 @@
 ---
-- include: install.yml
-- include: dnd_template.yml
-- include: dnd_git.yml
+#- include: install.yml
+- include: latex_template.yml
+  with_items:
+    - {template_name: "dnd", repo_url: "https://github.com/rpgtex/DND-5e-LaTeX-Template.git"}
+- include: clone_repo.yml
+  with_items:
+    - {directory: "DnD_LaTeX/adventures", repo_url: "https://github.com/decyne/dnd-adventures"}
+    - {directory: "DnD_LaTeX/templates", repo_url: "https://github.com/decyne/dnd-adventure-templates"}

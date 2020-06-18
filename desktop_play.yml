@@ -16,4 +16,4 @@
      - { role: xfce, icons: "numix_circle" }
 #     - mounts
 #     - chrome
-#     - latex
+     - latex

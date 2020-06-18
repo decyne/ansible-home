@@ -1,18 +1,18 @@
 ---
+- set_fact:
+    outer_loop: "{{ item }}"
+ 
 - name: Get LaTeX home directory name
   command: kpsewhich -var-value TEXMFHOME
   register: latex_home
   changed_when: false
-
-- debug:
-    var: latex_home.stdout
 
 - name: Create LaTeX home directory
   file:
     path: "{{ latex_home.stdout }}/tex/latex"
     state: directory
 
-- name: Clone DnD LaTeX template repo
+- name: "Clone LaTeX template repo https://github.com/rpgtex/DND-5e-LaTeX-Template.git"
   git:
-    repo: 'https://github.com/rpgtex/DND-5e-LaTeX-Template.git'
-    dest: "{{ latex_home.stdout }}/tex/latex/dnd"
+    repo: '{{ outer_loop.repo_url }}'
+    dest: "{{ latex_home.stdout }}/tex/latex/{{ outer_loop.template_name }}"
