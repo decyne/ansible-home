@@ -1,0 +1,14 @@
+---
+#- name: Check if hotkey is taken
+#  lineinfile:
+#    path: "~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml" 
+#    regexp: "{{ shortcut }}"
+#  check_mode: yes
+#  register: conf
+#  failed_when: never
+
+#- name: Delete hotkey
+#  command: 
+
+- name: Add hotkey
+  command: 'xfconf-query --create --channel xfce4-keyboard-shortcuts --property "/commands/custom/<Super><l>" --type string --set "xflock4"'

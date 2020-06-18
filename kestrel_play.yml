@@ -2,6 +2,7 @@
 - hosts: kestrel
   roles: 
      - home_install
+     - users
      - common_applications
      - firefox
      - { role: spotify, when: "ansible_os_family in ['Debian', 'Linuxmint','\"elementary\"']" }

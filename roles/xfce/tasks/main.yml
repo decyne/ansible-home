@@ -1,3 +1,4 @@
 ---
-- include: "{{ icons }}_debian.yml"
-  when: ansible_os_family in ['Debian', 'Linuxmint','\"elementary\"']
+#- include: "{{ icons }}_debian.yml"
+#  when: ansible_os_family in ['Debian', 'Linuxmint','\"elementary\"']
+- include: hotkeys.yml
