@@ -15,7 +15,8 @@
 - name: Check if hotkey exists
   shell: 'xfconf-query --channel xfce4-keyboard-shortcuts -lv | egrep "{{ outer_loop.shortcut }}.*{{ outer_loop.command }}"'
   register: hotkey_does_not_exist
-  failed_when: false
+  #failed_when: hotkey_does_not_exist.rc|int == 0 or hotkey_does_not_exist.rc|int == 1
+  failed_when: hotkey_does_not_exist.rc != 0 and hotkey_does_not_exist.rc != 1
   changed_when: false
   
 - name: Add hotkey
