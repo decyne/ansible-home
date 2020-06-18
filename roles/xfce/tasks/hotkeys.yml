@@ -11,4 +11,4 @@
 #  command: 
 
 - name: Add hotkey
-  command: 'xfconf-query --create --channel xfce4-keyboard-shortcuts --property "/commands/custom/<Super><l>" --type string --set "xflock4"'
+  command: 'xfconf-query --create --channel xfce4-keyboard-shortcuts --property "/commands/custom/<Super>l" --type string --set "xflock4"'
