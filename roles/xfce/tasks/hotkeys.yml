@@ -9,6 +9,15 @@
 
 #- name: Delete hotkey
 #  command: 
+- set_fact:
+   outer_loop: "{{ item }}"
 
+- name: Check if hotkey exists
+  shell: 'xfconf-query --channel xfce4-keyboard-shortcuts -lv | egrep "{{ outer_loop.shortcut }}.*{{ outer_loop.command }}"'
+  register: hotkey_does_not_exist
+  failed_when: false
+  changed_when: false
+  
 - name: Add hotkey
-  command: 'xfconf-query --create --channel xfce4-keyboard-shortcuts --property "/commands/custom/<Super>l" --type string --set "xflock4"'
+  command: 'xfconf-query --create --channel xfce4-keyboard-shortcuts --property "/commands/custom/{{ outer_loop.shortcut }}" --type string --set "{{ outer_loop.command }}"'
+  when: hotkey_does_not_exist.rc
