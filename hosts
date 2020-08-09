@@ -44,7 +44,7 @@
 
 oriole  ansible_host=192.168.1.109
 potoo   ansible_host=192.168.1.100
-kestrel ansible_host=192.168.1.113
+kestrel ansible_host=192.168.1.105
 
 [all:vars]
 user=declan

@@ -1,0 +1,3 @@
+---
+# Latex bin should already be added to path on most OS
+latex_bin: ""

@@ -1,5 +1,13 @@
 ---
 #- include: install.yml
+- include_vars: "{{ lookup('first_found',params) }}"
+  vars:
+    params:
+      files:
+        - "{{ ansible_os_family }}.yml"
+        - default.yml
+      paths:
+        - 'vars'
 - include: latex_template.yml
   with_items:
     - {template_name: "dnd", repo_url: "https://github.com/rpgtex/DND-5e-LaTeX-Template.git"}

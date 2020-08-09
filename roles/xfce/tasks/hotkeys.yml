@@ -22,3 +22,10 @@
 - name: Add hotkey
   command: 'xfconf-query --create --channel xfce4-keyboard-shortcuts --property "/commands/custom/{{ outer_loop.shortcut }}" --type string --set "{{ outer_loop.command }}"'
   when: hotkey_does_not_exist.rc
+
+# To add
+# Tile Left - super + left arrow
+# Tile right - super + right arrow
+# maximise - super + up arrow
+# minimise - super + down arrow
+# xfce4-terminal - super + enter

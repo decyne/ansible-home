@@ -6,19 +6,3 @@
     generate_ssh_key: yes
     shell: /bin/bash
     state: present
-
-- name: Add privileged user
-  become: yes
-  user:
-    name: "{{ priv_user }}"
-    generate_ssh_key: yes
-    shell: /bin/bash
-    state: present
-
-- name: Allow priv user to sudo without password
-  become: yes
-  template:
-    src: priv_sudoers
-    dest: "/etc/sudoers.d/{{ priv_sudoers }}"
-    mode: 0400
-    owner: root

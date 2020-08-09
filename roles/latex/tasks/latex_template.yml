@@ -6,6 +6,9 @@
   command: kpsewhich -var-value TEXMFHOME
   register: latex_home
   changed_when: false
+  # Add path for latex bin 
+  environment:
+    PATH: "{{ ansible_env.PATH }}:{{ latex_bin }}"
 
 - name: Create LaTeX home directory
   file:
