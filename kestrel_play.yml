@@ -7,4 +7,4 @@
 #    - { role: spotify, when: "ansible_os_family in ['Debian', 'Linuxmint','\"elementary\"']" }
 #    - { role: xfce, icons: "numix_circle" }
 #    - mounts
-#    - chrome
+     - chrome
