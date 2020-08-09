@@ -4,7 +4,6 @@
      - home_install
      - common_applications
      - latex
-#    - firefox
 #    - { role: spotify, when: "ansible_os_family in ['Debian', 'Linuxmint','\"elementary\"']" }
 #    - { role: xfce, icons: "numix_circle" }
 #    - mounts
