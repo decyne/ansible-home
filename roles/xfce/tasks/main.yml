@@ -1,6 +1,15 @@
 ---
 #- include: "{{ icons }}_debian.yml"
 #  when: ansible_os_family in ['Debian', 'Linuxmint','\"elementary\"']
+
+# The manager "commands" is used if the shortcut is set in settins > keyboard
+# The manager "xfwm4" is used if the shortcut is set in settings > window manager 
 - include: hotkeys.yml
   with_items:
-    - {shortcut: "<Super>l", command: "xflock4"}
+    - {shortcut: "<Super>space", command: "xfce4-popup-whiskermenu", manager: "commands"}
+    - {shortcut: "<Alt>Enter", command: "xfce4-terminal", manager: "commands"}
+    - {shortcut: "<Super>l", command: "xflock4", manager: "commands"}
+    - {shortcut: "<Super>Left", command: "tile_left_key", manager: "xfwm4"}
+    - {shortcut: "<Super>Right", command: "tile_right_key", manager: "xfwm4"}
+    - {shortcut: "<Super>Up", command: "maximize_window_key", manager: "xfwm4"}
+    - {shortcut: "<Super>Down", command: "minimize_window_key", manager: "xfwm4"}
