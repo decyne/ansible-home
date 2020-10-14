@@ -1,0 +1,5 @@
+---
+- include: set_gsetting.yml
+  with_items:
+    - { setting: "org.gnome.desktop.screensaver", field: "lock-enabled", state: "false" } 
+    - { setting: "org.gnome.desktop.lockdown", field: "disable-lock-screen", state: "true" } 
