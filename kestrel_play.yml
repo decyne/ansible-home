@@ -1,10 +1,13 @@
 ---
-- hosts: kestrel
+- hosts:
+    - kestrel
+    - albatross
   roles: 
      - home_install
      - common_applications
      - latex
-#    - { role: spotify, when: "ansible_os_family in ['Debian', 'Linuxmint','\"elementary\"']" }
+     - steam
+     - discord
+     - { role: spotify, when: "ansible_os_family in ['Debian', 'Linuxmint','\"elementary\"']" }
 #    - { role: xfce, icons: "numix_circle" }
-#    - mounts
-     - chrome
+#    - chrome

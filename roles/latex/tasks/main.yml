@@ -1,5 +1,5 @@
 ---
-#- include: install.yml
+- include: install.yml
 - include_vars: "{{ lookup('first_found',params) }}"
   vars:
     params:
