@@ -1,0 +1,30 @@
+# Ventoy is an application that allows you to put multiple bootable
+# isos on a single USB
+---
+- name: Create directory for ventoy
+  file:
+    path: "{{ ventoy_dir }}"
+    state: directory
+
+- name: "Check if ventoy version {{ ventoy_version }} has been downloaded"
+  stat:
+    path: "{{ ventoy_dir }}/ventoy-{{ ventoy_version }}"
+  register: ventoy
+ 
+- name: Download ventoy
+  get_url:
+    url: "https://github.com/ventoy/Ventoy/releases/download/v{{ ventoy_version }}/ventoy-{{ ventoy_version }}-linux.tar.gz"
+    dest: "{{ ventoy_dir }}"
+  when: not ventoy.stat.exists
+
+- name: Extract ventoy
+  unarchive:
+    src: "{{ ventoy_dir }}/ventoy-{{ ventoy_version }}-linux.tar.gz"
+    dest: "{{ ventoy_dir }}"
+    remote_src: yes
+  when: not ventoy.stat.exists
+
+- name: Remove ventoy zip
+  file:
+    state: absent
+    path: "{{ ventoy_dir }}/ventoy-{{ ventoy_version }}-linux.tar.gz"
