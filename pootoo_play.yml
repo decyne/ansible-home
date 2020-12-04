@@ -2,9 +2,9 @@
 - hosts: potoo
   roles: 
      - home_install
-     - gnome
+     - gnome_big_screen
      - common_applications
-#     - minecraft_client
-#     - minecraft_server
+     - minecraft_client
+     - minecraft_server
      - steam
      - spotify

@@ -1,0 +1,3 @@
+# Configures gnome for use on a big screen such as a TV
+---
+- include: disable_screen_lock.yml

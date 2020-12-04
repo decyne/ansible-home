@@ -1,3 +1,4 @@
+# Configures gnome for use with a desktop by disabling the sidebar and hiding desktop icons
 ---
 - include: set_gsetting.yml
   with_items:
