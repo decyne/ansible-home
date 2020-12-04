@@ -7,8 +7,8 @@
     - common_applications
     - steam
     - discord
-#    - minecraft_server
-#    - minecraft_client
+    - minecraft_server
+    - minecraft_client
 #    - chrome
     - latex
     - gnome_cleanup

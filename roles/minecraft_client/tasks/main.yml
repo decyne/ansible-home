@@ -9,7 +9,6 @@
 - name: Get package list on system
   package_facts:
     manager: auto
-  when: "'minecraft-launcher' not in ansible_facts.packages"
 
 - name: Download Minecraft
   become: yes
