@@ -1,5 +1,9 @@
 ---
-- include: gsettings.yml
+- include: set_gsetting.yml
   with_items:
-    - {setting: "org.gnome.desktop.background", command: "show-desktop-icons", state: "false"}
-    - {setting: "org.gnome.shell.extensions.dash-to-dock", command: "dock-fixed", state: "false"}
+    - {setting: "org.gnome.desktop.background", field: "show-desktop-icons", state: "false"}
+    - {setting: "org.gnome.shell.extensions.desktop-icons", field: "show-home", state: "false"}
+    - {setting: "org.gnome.shell.extensions.desktop-icons", field: "show-trash", state: "false"}
+    - {setting: "org.gnome.shell.extensions.dash-to-dock", field: "dock-fixed", state: "false"}
+    - {setting: "org.gnome.shell.extensions.dash-to-dock", field: "autohide", state: "false"}
+    - {setting: "org.gnome.shell.extensions.dash-to-dock", field: "intellihide", state: "false"}
