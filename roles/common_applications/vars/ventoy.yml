@@ -1,0 +1,3 @@
+---
+ventoy_version: 1.0.29
+ventoy_dir: "/home/{{ ansible_user_id }}/ventoy"

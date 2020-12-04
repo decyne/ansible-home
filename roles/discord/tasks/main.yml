@@ -1,28 +1,12 @@
 ---
-- fail:
-    msg: Only able to install Discord on Debian based systems
-  when: ansible_os_family not in ['Debian', 'Linuxmint','\"elementary\"']
-
-- name: Get package list on system
-  package_facts:
-    manager: auto
-
-- name: Download discord
-  become: yes
-  get_url:
-    url: "https://discordapp.com/api/download?platform=linux&format=deb"
-    dest: "{{ discord_package }}"
-  when: "'discord' not in ansible_facts.packages"
-
 - name: Install discord
   become: yes
-  apt:
-    deb: "{{ discord_package }}"
-  when: "'discord' not in ansible_facts.packages"
+  snap:
+    name: discord
+    state: present
+  register: discord_install
 
-- name: Remove discord package
+- name: Allow discord to observe unconfined
   become: yes
-  file:
-    path: "{{ discord_package }}"
-    state: absent
-  when: "'discord' not in ansible_facts.packages"
+  command: snap connect discord:system-observe
+  when: discord_install.changed

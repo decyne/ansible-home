@@ -5,3 +5,5 @@
 - include: tmux_configs.yml
 - include: snap.yml
   when: ansible_os_family in ['Debian', 'Linuxmint','\"elementary\"']
+- include_vars: ventoy.yml
+- include: ventoy.yml

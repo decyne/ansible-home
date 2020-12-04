@@ -1,0 +1,2 @@
+---
+- include: disable_screen_lock.yml
