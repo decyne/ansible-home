@@ -1,0 +1,12 @@
+---
+- set_fact:
+   outer_loop: "{{ item }}"
+
+- name: "Check setting for {{ outer_loop.setting }} {{ outer_loop.command }}"
+  shell: 'gsettings get {{ outer_loop.setting }} {{ outer_loop.command }} {{ outer_loop.setting }}'
+  register: gsetting
+  changed_when: false
+  
+- name: "Set setting for {{ outer_loop.setting }} {{ outer_loop.command }} to {{ outer_loop.setting }}"
+  shell: 'gsettings set {{ outer_loop.setting }} {{ outer_loop.command }} {{ outer_loop.setting }}'
+  when: gsetting.changed
