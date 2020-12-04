@@ -1,5 +1,5 @@
 ---
 - include: gsettings.yml
   with_items:
-    - {setting: "org.gnome.desktop.background", command: "show-desktop-icons", setting: "false"}
-    - {setting: "org.gnome.shell.extensions.dash-to-dock", command: "dock-fixed", setting: "false"}
+    - {setting: "org.gnome.desktop.background", command: "show-desktop-icons", state: "false"}
+    - {setting: "org.gnome.shell.extensions.dash-to-dock", command: "dock-fixed", state: "false"}
