@@ -7,3 +7,6 @@
   when: ansible_os_family in ['Debian', 'Linuxmint','\"elementary\"']
 - include_vars: ventoy.yml
 - include: ventoy.yml
+- include: default_application.yml
+  with_items:
+    - {application: "org.pwmt.zathura-pdf-poppler.desktop", mime: "application/pdf"}
