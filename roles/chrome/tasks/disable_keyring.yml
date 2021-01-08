@@ -1,9 +1,0 @@
----
-# This will store passwords in a local database in plaintext.
-# I don't care because I use an external password manager.
-- name: Disable chrome asking for keyring on login
-  become: yes
-  replace:
-    path: /usr/share/applications/google-chrome.desktop
-    regexp: "^(Exec=.*google-chrome-stable %U)$"
-    replace: '\1 --password-store=basic'

@@ -1,7 +1,0 @@
----
-- name: Install apache
-  become: yes
-  action: >
-    {{ ansible_pkg_mgr }} name=apache2 state=present update_cache=yes
-  notify:
-    - restart apache
