@@ -1,0 +1,19 @@
+---
+- name: Install programs required to run VMs using KVM
+  become: yes
+  action: >
+    {{ ansible_pkg_mgr }} name={{ item }} state=present update_cache=yes
+  with_items:
+    - qemu-kvm
+    - libvirt-daemon-system
+    - libvirt-clients
+    - bridge-utils
+    - virt-viewer
+    - virt-manager
+
+- name: "Add the user {{ user }} to the groups required to run KVMs"
+  become: yes
+  user: 
+    name: "{{ user }}"
+    groups: ["libvirt", "kvm"]
+    append: yes

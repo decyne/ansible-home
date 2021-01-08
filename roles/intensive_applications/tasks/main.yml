@@ -1,11 +1,3 @@
 ---
-- name: Install intensive programs
-  become: yes
-  action: >
-    {{ ansible_pkg_mgr }} name={{ item }} state=present update_cache=yes
-  with_items:
-    - gimp
-    - freecad
-    - inkscape
-    - pinta
-    - calibre
+- include: install.yml
+- include: kvm.yml
