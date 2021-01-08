@@ -2,7 +2,7 @@
 - hosts: oriole
   roles: 
     - intensive_applications
-     - { role: ansible, when: "ansible_os_family in ['Debian', 'Linuxmint','\"elementary\"']" }
+   # - { role: ansible, when: "ansible_os_family in ['Debian', 'Linuxmint','\"elementary\"']" }
     - home_install
     - common_applications
     - steam
@@ -11,4 +11,4 @@
     - minecraft_client
     - latex
     - gnome_desktop
-     - { role: spotify, when: "ansible_os_family in ['Debian', 'Linuxmint','\"elementary\"']" }
+    - { role: spotify, when: "ansible_os_family in ['Debian', 'Linuxmint','\"elementary\"']" }
