@@ -12,3 +12,11 @@
     path: "/home/{{ user }}/.profile"
     regexp: '^EDITOR='
     line: 'EDITOR=$VISUAL'
+
+- name: Create git config
+  template:
+    src: gitconfig
+    dest: "/home/{{ user }}/.gitconfig"
+    mode: 0664
+    owner: "{{ user }}"
+    group: "{{ user }}"

@@ -1,0 +1,12 @@
+[user]
+        email = declorange@live.com
+        name = Declan
+
+[diff]
+        tool = vimdiff
+
+[merge]
+        tool = vimdiff
+
+[difftool]
+        prompt = false
