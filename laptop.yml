@@ -1,0 +1,10 @@
+---
+- hosts:
+    - kestrel
+  roles: 
+     - home_install
+     - common_applications
+     - ansible
+     - latex
+     - discord
+     - spotify
