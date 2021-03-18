@@ -1,0 +1,5 @@
+---
+- name: Install latest Ansible
+  become: yes
+  action: >
+    {{ ansible_pkg_mgr }} name=ansible state=present update_cache=yes

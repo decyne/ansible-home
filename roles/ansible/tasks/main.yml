@@ -1,2 +1,4 @@
 ---
-- include: install_latest.yml
+- include: ansible_ppa.yml
+  when: ansible_facts['distribution'] == 'Ubuntu'
+- include: install.yml

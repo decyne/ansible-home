@@ -11,9 +11,3 @@
   apt:
     update_cache: yes
   when: ansible_repo_added.changed
-
-- name: Install latest Ansible
-  become: yes
-  apt:
-    name: ansible
-    state: latest
