@@ -1,7 +1,3 @@
 ---
-- fail:
-    msg: Only able to install Spotify on Debian based systems
-  when: ansible_os_family not in ['Debian', 'Linuxmint','\"elementary\"']
-
 - include: spotify.yml
 - include: spotify_tui.yml
