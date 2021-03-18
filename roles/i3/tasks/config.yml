@@ -1,0 +1,5 @@
+---
+- name: import i3 config
+  template:
+    src: config
+    dest: ~/.i3/config

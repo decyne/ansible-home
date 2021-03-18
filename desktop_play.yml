@@ -11,4 +11,4 @@
     - minecraft_server
     - minecraft_client
     - steam
-    - i3
+    - {role: i3, monitors: 2}

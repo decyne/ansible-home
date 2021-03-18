@@ -8,4 +8,4 @@
     - latex
     - discord
     - spotify
-    - i3
+    - {role: i3, monitors: 1}
