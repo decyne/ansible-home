@@ -1,7 +1,12 @@
 ---
-- name: Install LaTeX
+- name: Install LaTeX on Ubuntu
   become: yes
   action: >
-    {{ ansible_pkg_mgr }} name={{ item }} state=present update_cache=yes
-  with_items:
-  - texlive-full
+    {{ ansible_pkg_mgr }} name=texlive-full state=present update_cache=yes
+  when: ansible_facts['os_family'] == 'Ubuntu'
+
+- name: Install LaTeX on archlinux
+  become: yes
+  action: >
+    {{ ansible_pkg_mgr }} name=texlive-most state=present update_cache=yes
+  when: ansible_facts['os_family'] == 'Archlinux'
