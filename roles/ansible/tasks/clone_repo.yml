@@ -1,0 +1,13 @@
+---
+- set_fact:
+    outer_loop: "{{ item }}"
+
+- name: "Create directory for git repo {{ outer_loop.repo_url }} at ~/{{ outer_loop.directory }}"
+  file:
+    path: "~/{{ outer_loop.directory }}"
+    state: directory
+  
+- name: "Clone git repo {{ outer_loop.repo_url }} to ~/{{ outer_loop.directory }}"
+  git:
+    repo: '{{ outer_loop.repo_url }}'
+    dest: "~/{{ outer_loop.directory }}"

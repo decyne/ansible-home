@@ -1,4 +1,9 @@
 ---
 - include: ansible_ppa.yml
   when: ansible_facts['distribution'] == 'Ubuntu'
+
 - include: install.yml
+
+- include: clone_repo.yml
+  with_items:
+    - {directory: "ansible", repo_url: "https://github.com/decyne/ansible-home"}
