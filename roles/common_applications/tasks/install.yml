@@ -2,13 +2,4 @@
 - name: Install common programs
   become: yes
   action: >
-    {{ ansible_pkg_mgr }} name={{ item }} state=present update_cache=yes
-  with_items:
-  - git
-  - vlc
-  - vim
-  - tmux
-  - nmap
-  - jpegoptim
-  - zathura
-  - pdftk
+    {{ ansible_pkg_mgr }} name={{ common_applications }} state=present update_cache=yes

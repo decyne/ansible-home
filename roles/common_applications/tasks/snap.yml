@@ -1,5 +1,0 @@
----
-- name: Install snap
-  become: yes
-  apt:
-    name: snapd

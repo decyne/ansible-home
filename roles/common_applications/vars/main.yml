@@ -1,0 +1,10 @@
+---
+common_applications:
+  - git
+  - vlc
+  - vim
+  - tmux
+  - nmap
+  - jpegoptim
+  - zathura
+  - pdftk
