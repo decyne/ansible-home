@@ -1,0 +1,29 @@
+---
+- name: Download java Ubuntu
+  become: yes
+  action: >
+    {{ ansible_pkg_mgr }} name=openjdk-8-jdk state=present update_cache=yes
+
+- name: Get package list on system
+  package_facts:
+    manager: auto
+
+- name: Download Minecraft
+  become: yes
+  get_url:
+    url: "https://launcher.mojang.com/download/{{ minecraft_installer }}"
+    dest: "/tmp/{{ minecraft_installer }}"
+  when: "'minecraft-launcher' not in ansible_facts.packages"
+
+- name: Install Minecraft
+  become: yes
+  action: >
+    {{ ansible_pkg_mgr }} deb=/tmp/Minecraft.deb state=present update_cache=yes
+  when: "'minecraft-launcher' not in ansible_facts.packages"
+
+- name: Remove Minecraft installer
+  become: yes
+  file:
+    path: "/tmp/{{ minecraft_installer }}"
+    state: absent
+  when: "'minecraft-launcher' not in ansible_facts.packages"

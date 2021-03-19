@@ -1,10 +1,15 @@
 ---
-- name: Download java
+- name: Download java Ubuntu
   become: yes
   action: >
-    {{ ansible_pkg_mgr }} name={{ item }} state=present update_cache=yes
-  with_items:
-    - openjdk-8-jdk
+    {{ ansible_pkg_mgr }} name=openjdk-8-jdk state=present update_cache=yes
+  when: ansible_facts['distribution'] == 'Ubuntu'
+
+- name: Download java Archlinux
+  become: yes
+  action: >
+    {{ ansible_pkg_mgr }} name=jdk8-openjdk state=present update_cache=yes
+  when: ansible_facts['distribution'] == 'Archlinux'
 
 - name: Create Minecraft Server Folder
   become: yes
