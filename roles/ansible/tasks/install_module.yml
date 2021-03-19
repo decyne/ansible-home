@@ -1,0 +1,11 @@
+---
+- set_fact:
+    outer_loop: "{{ item }}"
+
+- name: Install Ansible module
+  become: yes
+  copy:
+    src: "/home/{{ user }}/ansible_modules/{{ outer_loop.location }}/{{ outer_loop.name }}"
+    dest: /usr/bin/ansible
+    mode: 0644
+    remote_src: yes

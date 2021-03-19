@@ -1,0 +1,5 @@
+---
+- name: Create folder for ansible modules
+  file:
+    path: ~/ansible_modules
+    state: directory
