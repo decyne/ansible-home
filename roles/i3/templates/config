@@ -323,7 +323,7 @@ set_from_resource $term_color15    color15
 bar {
 	i3bar_command i3bar
 	status_command i3status
-	position bottom
+	position top
 
 ## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
 #	tray_output primary
@@ -351,20 +351,21 @@ bar {
 {# Set workspaces to specific monitors if we have more than 1 #}
 {% if monitors|default(1) == 2 %}
 # Monitors
+# Can view monitors with xrandr --current
 set $monitor_left DVI-I-1
-set $monitor_right DVI-I-0
+set $monitor_right DVI-D-0
 
 # Set workspaces to specific monitors
-workspace $wksp1 output $monitor_left
-workspace $wksp2 output $monitor_right
-workspace $wksp3 output $monitor_left
-workspace $wksp4 output $monitor_right
-workspace $wksp5 output $monitor_left
-workspace $wksp6 output $monitor_right
-workspace $wksp7 output $monitor_left
-workspace $wksp8 output $monitor_right
-workspace $wksp9 output $monitor_left
-workspace $wksp10 output $monitor_right
+workspace $ws1 output $monitor_left
+workspace $ws2 output $monitor_right
+workspace $ws3 output $monitor_left
+workspace $ws4 output $monitor_right
+workspace $ws5 output $monitor_left
+workspace $ws6 output $monitor_right
+workspace $ws7 output $monitor_left
+workspace $ws8 output $monitor_right
+workspace $ws9 output $monitor_left
+workspace $ws10 output $monitor_right
 {% endif %}
 
 # hide/unhide i3status bar

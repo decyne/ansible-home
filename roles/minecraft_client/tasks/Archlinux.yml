@@ -1,4 +1,4 @@
 ---
 - name: Install minecraft using Archlinux AUR
-  command: yay -S minecraft-launcher --answerclean All --answerdiff None
-
+  yay:
+    name: minecraft-launcher
