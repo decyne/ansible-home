@@ -10,3 +10,5 @@ common_applications:
   - zathura-pdf-mupdf
   - pdftk
   - firefox
+  - unzip
+  - fzf

@@ -13,8 +13,13 @@ call plug#begin('~/.vim/plugged')
 " Make sure you use single quotes
 Plug 'lervag/vimtex'
 Plug 'vimwiki/vimwiki'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
 " Initialize plugin system
 call plug#end()
 
 set shiftwidth=2
+
+set nocompatible
+filetype plugin on
+syntax on
