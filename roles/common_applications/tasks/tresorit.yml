@@ -1,0 +1,6 @@
+- name: Create link to tresorit executable
+  become: yes
+  file:
+    state: link
+    path: /usr/local/bin/tresorit
+    src: "/home/{{ user }}/.local/share/tresorit/tresorit"
