@@ -23,3 +23,10 @@ set shiftwidth=2
 set nocompatible
 filetype plugin on
 syntax on
+
+" vimwiki
+let SandV = {}
+let SandV.path = '~/Tresors/RPGs/RPGs/Scum and Villainy/Campaign/wiki'
+let SandV.path_html = '~/Tresors/RPGs/RPGs/Scum and Villainy/Campaign/wiki_html'
+
+let g:vimwiki_list = [SandV]
