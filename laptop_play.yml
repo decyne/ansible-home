@@ -5,7 +5,7 @@
     - home_install
     - common_applications
     - ansible
-    - latex
+    - rpg_repos
     - discord
     - spotify
     - {role: i3, monitors: 1}

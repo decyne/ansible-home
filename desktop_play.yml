@@ -1,14 +1,14 @@
 ---
 - hosts: declan-desktop
   roles: 
-    - home_install
+    #- home_install
     - common_applications
-    - intensive_applications
-    - ansible
-    - latex
-    - discord
-    - spotify
-    - minecraft_server
-    - minecraft_client
-    - steam
-    - {role: i3, monitors: 2}
+    #- intensive_applications
+    #- ansible
+    - rpg_repos
+    #- discord
+    #- spotify
+    #- minecraft_server
+    #- minecraft_client
+    #- steam
+    #- {role: i3, monitors: 2}
