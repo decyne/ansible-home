@@ -28,5 +28,10 @@ syntax on
 let SandV = {}
 let SandV.path = '~/Tresors/RPGs/RPGs/Scum and Villainy/Campaign/wiki'
 let SandV.path_html = '~/Tresors/RPGs/RPGs/Scum and Villainy/Campaign/wiki_html'
+let Stonetop = {}
+let Stonetop.path = '~/RPG_Repos/stonetop/wiki'
+let Stonetop.path_html = '~/RPG_Repos/stonetop/wiki_html'
+let Stonetop.syntax = 'markdown'
+let Stonetop.ext = '.md'
 
-let g:vimwiki_list = [SandV]
+let g:vimwiki_list = [SandV,Stonetop]
