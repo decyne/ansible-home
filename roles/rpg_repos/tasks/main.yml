@@ -15,4 +15,3 @@
   with_items:
     - {directory: "RPG_Repos/adventures", repo_url: "https://github.com/decyne/dnd-adventures"}
     - {directory: "RPG_Repos/templates", repo_url: "https://github.com/decyne/dnd-adventure-templates"}
-    - {directory: "RPG_Repos/stonetop", repo_url: "https://github.com/decyne/stonetop-prep.git"}
