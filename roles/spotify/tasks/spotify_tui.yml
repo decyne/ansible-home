@@ -4,12 +4,3 @@
   snap:
     name: spt
     state: present
-
-- name: Configure spotify-tui for client
-  become: yes
-  copy:
-    src: client.yml
-    dest: "/home/{{ user }}/snap/spt/177/.config/spotify-tui/" 
-    owner: "{{ user }}"
-    group: "{{ user }}"
-    mode: 0664
