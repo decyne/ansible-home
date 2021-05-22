@@ -1,0 +1,10 @@
+---
+- set_fact:
+    outer_loop: "{{ item }}"
+
+- name: "Create a link from ansible modules {{ outer_loop.role }} to the ansible roles folder" 
+  file:
+    state:
+    src: "~/ansible_modules/{{ outer_loop.role }}"
+    dest: "~/ansible/roles/{{ outer_loop.role }}"
+    state: link

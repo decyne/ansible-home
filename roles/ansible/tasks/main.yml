@@ -4,14 +4,18 @@
 
 - include: install.yml
 
-- include: clone_repo.yml
-  with_items:
-    - {directory: "ansible", repo_url: "https://github.com/decyne/ansible-home"}
+  #- include: clone_repo.yml
+  #  with_items:
+  #    - {directory: "ansible", repo_url: "https://github.com/decyne/ansible-home"}
 
 - include: module_folder.yml
 - include: clone_repo.yml
   with_items:
     - {directory: "ansible_modules/ansible-yay", repo_url: "https://github.com/mnussbaum/ansible-yay"}
-- include: install_module.yml
+    - {directory: "ansible_modules/rclone-hosts", repo_url: "https://github.com/stefangweichinger/ansible-rclone.git"}
+#- include: install_module.yml
+#  with_items:
+#    - {location: "ansible-yay", name: "yay"}
+- include: link_role.yml
   with_items:
-    - {location: "ansible-yay", name: "yay"}
+    - {role: "rclone-hosts" }
