@@ -353,7 +353,7 @@ bar {
 # Monitors
 # Can view monitors with xrandr --current
 set $monitor_left DVI-I-1
-set $monitor_right DVI-D-0
+set $monitor_right HDMI-1
 
 # Set workspaces to specific monitors
 workspace $ws1 output $monitor_left
