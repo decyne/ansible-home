@@ -18,7 +18,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 " Initialize plugin system
 call plug#end()
 
-set shiftwidth=2
+set ai et ts=2 sw=2
 
 set nocompatible
 filetype plugin on
