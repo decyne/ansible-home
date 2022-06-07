@@ -7,3 +7,22 @@
     owner: "{{ user }}"
     group: "{{ user }}"
     mode: 0600
+
+
+- name: Create vimwiki mappings directory
+  become: yes
+  file:
+    state: directory
+    path: "/home/{{ user }}/.vim/ftplugin"
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    mode: 0755
+
+- name: Create vimwiki mappings
+  become: yes
+  template:
+    src: vimwiki.vim
+    dest: "/home/{{ user }}/.vim/ftplugin/vimwiki.vim"
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    mode: 0600

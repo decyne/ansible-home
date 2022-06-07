@@ -28,10 +28,23 @@ syntax on
 let SandV = {}
 let SandV.path = '~/Tresors/RPGs/RPGs/Scum and Villainy/Campaign/wiki'
 let SandV.path_html = '~/Tresors/RPGs/RPGs/Scum and Villainy/Campaign/wiki_html'
+
 let Stonetop = {}
 let Stonetop.path = '~/RPG_Repos/stonetop/wiki'
 let Stonetop.path_html = '~/RPG_Repos/stonetop/wiki_html'
 let Stonetop.syntax = 'markdown'
 let Stonetop.ext = '.md'
 
-let g:vimwiki_list = [SandV,Stonetop]
+let Illmire = {}
+let Illmire.path = '~/Tresors/RPGs/RPGs/Illmire/Campaign/wiki'
+let Illmire.path_html = '~/Tresors/RPGs/RPGs/Illmire/Campaign/wiki_html'
+let Illmire.syntax = 'markdown'
+let Illmire.ext = '.md'
+
+let Painting = {}
+let Painting.path = '~/RPG_Repos/Miniatures/Painting/wiki'
+let Painting.path_html = '~/RPG_Repos/Miniatures/Painting/wiki_html'
+let Painting.syntax = 'markdown'
+let Painting.ext = '.md'
+
+let g:vimwiki_list = [SandV,Stonetop,Illmire,Painting]
