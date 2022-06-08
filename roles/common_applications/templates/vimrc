@@ -18,7 +18,8 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 " Initialize plugin system
 call plug#end()
 
-set ai et ts=2 sw=2 sts=2 nu rnu cuc
+set ai et ts=2 sw=2
+autocmd FileType yaml setlocal sts=2 nu rnu cuc
 
 set nocompatible
 filetype plugin on

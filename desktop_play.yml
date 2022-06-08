@@ -3,7 +3,7 @@
   roles: 
     - home_install
     - common_applications
-     intensive_applications
+    - intensive_applications
     - ansible
     - rpg_repos
     - discord
