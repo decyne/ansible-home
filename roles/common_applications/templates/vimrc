@@ -41,7 +41,7 @@ let Illmire.path = '~/Tresors/RPGs/RPGs/Illmire/Campaign/wiki'
 let Illmire.path_html = '~/Tresors/RPGs/RPGs/Illmire/Campaign/wiki_html'
 
 let Painting = {}
-let Painting.path = '~/RPG_Repos/Miniatures/Painting/wiki'
-let Painting.path_html = '~/RPG_Repos/Miniatures/Painting/wiki_html'
+let Painting.path = '~/Tresors/RPGs/Miniatures/Painting/wiki'
+let Painting.path_html = '~/Tresors/RPGs/Miniatures/Painting/wiki_html'
 
 let g:vimwiki_list = [SandV,Stonetop,Illmire,Painting]
