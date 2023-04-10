@@ -12,3 +12,4 @@ common_applications:
   - firefox
   - unzip
   - fzf
+  - autojump
