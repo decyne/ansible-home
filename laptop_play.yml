@@ -6,6 +6,3 @@
     - common_applications
     - ansible
     - rpg_repos
-    - discord
-    - spotify
-    - {role: i3, monitors: 1}

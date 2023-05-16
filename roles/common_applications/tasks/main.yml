@@ -8,4 +8,3 @@
 - include: default_application.yml
   with_items:
     - {application: "org.pwmt.zathura-pdf-poppler.desktop", mime: "application/pdf"}
-- include: tresorit.yml

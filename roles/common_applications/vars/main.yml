@@ -7,9 +7,7 @@ common_applications:
   - nmap
   - jpegoptim
   - zathura
-  - zathura-pdf-mupdf
   - pdftk
   - firefox
   - unzip
   - fzf
-  - autojump

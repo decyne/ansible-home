@@ -44,7 +44,7 @@
 
 declan-desktop    ansible_host=192.168.1.109
 potoo     ansible_host=192.168.1.108
-declan-laptop   ansible_host=192.168.1.101
+declan-laptop   ansible_host=192.168.1.112
 
 [all:vars]
 user=declan

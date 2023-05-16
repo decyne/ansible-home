@@ -1,17 +1,19 @@
 ---
-- include: install.yml
-- include_vars: "{{ lookup('first_found',params) }}"
-  vars:
-    params:
-      files:
-        - "{{ ansible_os_family }}.yml"
-        - default.yml
-      paths:
-        - 'vars'
-- include: latex_template.yml
-  with_items:
-    - {template_name: "dnd", repo_url: "https://github.com/rpgtex/DND-5e-LaTeX-Template.git"}
+#- include: install.yml
+#- include_vars: "{{ lookup('first_found',params) }}"
+#  vars:
+#    params:
+#      files:
+#        - "{{ ansible_os_family }}.yml"
+#        - default.yml
+#      paths:
+#        - 'vars'
+#- include: latex_template.yml
+#  with_items:
+#    - {template_name: "dnd", repo_url: "https://github.com/rpgtex/DND-5e-LaTeX-Template.git"}
 - include: clone_repo.yml
   with_items:
     - {directory: "RPG_Repos/adventures", repo_url: "https://github.com/decyne/dnd-adventures"}
     - {directory: "RPG_Repos/templates", repo_url: "https://github.com/decyne/dnd-adventure-templates"}
+    - {directory: "RPG_Repos/templates", repo_url: "https://github.com/decyne/rpg-hexmap-template"}
+    - {directory: "RPG_Repos/blog", repo_url: "https://github.com/decyne/decyne.github.io"}
