@@ -11,3 +11,9 @@ common_applications:
   - firefox
   - unzip
   - fzf
+  - autojump
+  - pandoc # Packages required for compiling PDFs using pandoc
+  - texlive-latex-base
+  - texlive-fonts-recommended
+  - texlive-extra-utils
+  - texlive-latex-extra # This is the last package required for compiling PDFs
